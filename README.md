@@ -1,44 +1,67 @@
-# ESP8266 Wi-Fi Data Logging to ThingSpeak
+# Hydroponic Farming Project
+
+![Hydroponic Farming](hydroponic_image.jpg)
 
 ## Overview
-This project demonstrates a method for utilizing an ESP8266 microcontroller to collect sensor data and transmit it to the ThingSpeak IoT platform via Wi-Fi. The provided code establishes a connection to a Wi-Fi network, reads incoming data from the serial port, parses it, and sends it to ThingSpeak using HTTP POST requests.
 
-## Hardware Requirements
-- **ESP8266 Microcontroller**: Any ESP8266 board such as NodeMCU.
-- **Sensors**: Sensors capable of data acquisition (e.g., temperature, humidity, etc.).
-- **USB Cable**: For programming the ESP8266 and supplying power.
+Hydroponic farming is a soilless method of cultivating plants in a nutrient-rich water solution. This project aims to create an automated hydroponic farming system that monitors various parameters such as turbidity, pH value, TDS (Total Dissolved Solids) value, temperature, and water level. By utilizing microcontrollers, sensors, actuators, and machine learning algorithms, this system ensures optimal growing conditions for plants and enables efficient management of resources.
 
-## Software Requirements
-- **Arduino IDE (or Compatible Development Environment)**: Required for programming the ESP8266.
-- **ESP8266WiFi Library**: To enable Wi-Fi communication with the ESP8266.
+## Features
 
-## Installation Steps
-1. **Connect ESP8266**: Connect the ESP8266 microcontroller to your computer using a USB cable.
-2. **Open Arduino IDE**: Open the Arduino IDE (or any compatible development environment).
-3. **Install ESP8266 Board Package**: If not already installed, install the ESP8266 board package via the Arduino IDE's Board Manager.
-4. **Download Required Libraries**: Download and install the ESP8266WiFi library from the Arduino Library Manager.
-5. **Copy Code**: Copy the provided code (`ESP8266_Data_Logging.ino`) into a new sketch in the Arduino IDE.
-6. **Configure Settings**: Modify the `apiKey`, `ssid`, and `pass` variables in the code to match your ThingSpeak API key and Wi-Fi credentials.
-7. **Upload Sketch**: Upload the modified sketch to the ESP8266 microcontroller.
+### Real-time Monitoring
+- **Turbidity**: Measures the clarity of water by detecting suspended particles.
+- **pH Value**: Determines the acidity or alkalinity of the nutrient solution.
+- **TDS Value**: Indicates the concentration of dissolved solids in the water.
+- **Temperature**: Monitors the temperature of the nutrient solution.
+- **Water Level**: Tracks the water level in the hydroponic system.
 
-## Usage Instructions
-1. **Sensor Connection**: Ensure that your sensors are correctly connected to the ESP8266 microcontroller and configured as per your requirements.
-2. **Monitor Serial Data**: Open the serial monitor in the Arduino IDE (or any serial communication tool) to monitor the data being sent to the ESP8266.
-3. **Send Data to ESP8266**: Send data over the serial port to the ESP8266 microcontroller in the following format: `aValue1bValue2cValue3dValue4`, where `Value1`, `Value2`, `Value3`, and `Value4` represent the sensor readings.
-4. **Data Transmission**: The ESP8266 microcontroller will receive, format, and transmit the data to ThingSpeak using HTTP POST requests.
-5. **View Data on ThingSpeak**: Check your ThingSpeak channel dashboard to visualize and analyze the transmitted data.
+### Automatic Control
+- **Actuators**: Controls pumps, fans, and other devices based on sensor readings to maintain ideal growing conditions.
+- **Thresholds**: Adjustable thresholds for each parameter to trigger automated actions, ensuring plants receive optimal care.
 
-## Configuration Parameters
-- **`apiKey`**: Your ThingSpeak API key.
-- **`ssid`**: SSID (name) of the Wi-Fi network.
-- **`pass`**: Password of the Wi-Fi network.
+### Data Logging and Visualization
+- **ThingSpeak Integration**: Data from sensors can be logged and visualized in real-time using ThingSpeak, a cloud-based IoT platform.
+- **Custom Dashboards**: Alternatively, data can be logged and visualized using custom dashboards built with libraries like matplotlib or Plotly.
 
-## Troubleshooting
-- **Wi-Fi Connection**: If the ESP8266 fails to connect to the Wi-Fi network, double-check the SSID and password settings.
-- **Data Format**: Ensure that the serial data sent to the ESP8266 adheres to the correct format and delimiter for successful parsing.
+### Machine Learning-based Prediction
+- **Optimal Farming Conditions**: Utilizes machine learning algorithms to predict optimal farming conditions based on historical sensor data, helping optimize plant growth and resource utilization.
+
+## Components
+
+- **Microcontrollers**: Arduino Uno, ESP8266.
+- **Sensors**: Turbidity sensor, pH sensor, TDS sensor, Temperature sensor, Distance sensor.
+- **Actuators**: Pumps, Fans.
+- **Machine Learning Libraries**: scikit-learn (Python).
+- **Communication Modules**: WiFi module, Serial communication.
+
+## Setup Instructions
+
+1. **Hardware Setup**:
+   - Connect sensors, actuators, and microcontrollers according to the circuit diagram provided in the project documentation.
+
+2. **Software Installation**:
+   - Install the necessary libraries for Arduino and Python (if applicable).
+   - Upload the Arduino sketches to the respective microcontrollers.
+   - Install required Python packages using `pip install -r requirements.txt`.
+
+3. **Configuration**:
+   - Set up WiFi credentials and ThingSpeak API key in the Arduino and Python scripts.
+   - Adjust sensor calibration values and control thresholds as needed.
+
+4. **Run the System**:
+   - Power on the hardware components.
+   - Run the Python script for data processing and prediction.
+   - Monitor the system behavior and adjust parameters if necessary.
 
 ## Contributing
-Contributions to this project are encouraged. Feel free to fork this repository, implement improvements, and submit pull requests to enhance the functionality.
+
+Contributions to this project are welcome! If you find any issues or have ideas for improvements, please feel free to open an issue or submit a pull request.
 
 ## License
+
 This project is licensed under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+- Special thanks to [name] for providing guidance and support throughout the project.
+- References to any libraries, tutorials, or resources used in the project.
