@@ -61,7 +61,3 @@ Contributions to this project are welcome! If you find any issues or have ideas 
 
 This project is licensed under the [MIT License](LICENSE).
 
-## Acknowledgments
-
-- Special thanks to [name] for providing guidance and support throughout the project.
-- References to any libraries, tutorials, or resources used in the project.
